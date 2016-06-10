@@ -1,5 +1,5 @@
 [local]
-localhost ansible_python_interpreter=/usr/bin/python
+localhost
 
 [webserver]
 10.10.23.33
