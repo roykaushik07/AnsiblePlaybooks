@@ -10,7 +10,7 @@
      count: 1
      keypair: kaushik-dev-2016
      region: eu-west-1
-  
+
   tasks:
   - name: Launch EC2 instance
     ec2:
@@ -19,5 +19,5 @@
        image = {{ image }} 
        wait = true 
        keypair = {{ keypair }}
-       count = {{count}}
-       region = {{region}}
+       count = {{ count }}
+       region = {{ region }}
