@@ -9,6 +9,7 @@
      image: ami-b0ac25c3
      count: 1
      keypair: kaushik-dev-2016
+     region: eu-west1
   
   tasks:
   - name: Launch EC2 instance
@@ -19,5 +20,4 @@
        wait = true 
        keypair = {{ keypair }}
        count = {{count}}
-      
-  
+       region = {{region}}
