@@ -4,20 +4,20 @@
   gather_facts: true
   
   vars:
-     instance_type: t2.micro
-     group_id: sg-514b9236
-     image: ami-b0ac25c3
-     count: 1
-     keypair: kaushik-dev-2016
-     region: eu-west-1
+    instance_type: t2.micro
+    group_id: sg-514b9236
+    image: ami-b0ac25c3
+    count: 1
+    keypair: kaushik-dev-2016
+    region: eu-west-1
 
   tasks:
   - name: Launch EC2 instance
     ec2:
-       group_id = {{ group_id }} 
-       instance_type = {{ instance_type}} 
-       image = {{ image }} 
-       wait = true 
-       keypair = {{ keypair }}
-       count = {{ count }}
-       region = {{ region }}
+       group_id={{ group_id }} 
+       instance_type={{ instance_type}} 
+       image={{ image }} 
+       wait=true 
+       keypair={{ keypair }}
+       count={{ count }}
+       region={{ region }}
