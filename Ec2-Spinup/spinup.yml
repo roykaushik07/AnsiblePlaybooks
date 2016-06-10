@@ -2,6 +2,7 @@
 - hosts: local
   connection: local
   gather_facts: true
+  become: yes
   
   vars:
     instance_type: t2.micro
