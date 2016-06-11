@@ -20,9 +20,6 @@
        keypair={{ keypair }}
        count={{ count }}
        region={{ region }}
-       instance_tags:
-            name: Dynamic
-            Region: Development
     register: ec2
     
   - name: Add all instance public IPs to host group
@@ -37,3 +34,9 @@
   - name: Ping the servers
     action: ping
     register: ec2_ping
+    
+  - name: Tag Ec2 Instance
+    ec2_tag:
+      tags:
+        Name: EC2-Ansible-Instance
+        Env: DEV
