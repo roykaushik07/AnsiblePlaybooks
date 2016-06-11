@@ -1,0 +1,9 @@
+---
+- name: Ping Webservers
+  hosts: webserver
+  gather_facts: yes
+  
+  tasks:
+  - name: Ping the servers
+    action: ping
+    register: ec2_ping

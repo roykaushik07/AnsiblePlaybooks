@@ -1,5 +1,3 @@
-[local]
-localhost
-
 [webserver]
-10.10.23.33
+52.48.216.36 ansible_user=ec2-user
+52.51.8.238 ansible_user=ec2-user
