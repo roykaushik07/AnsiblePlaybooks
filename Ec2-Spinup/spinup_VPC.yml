@@ -9,8 +9,7 @@
     count: 1
     keypair: kaushik-dev-2016
     region: eu-west-1
-    vpc_subnet_id: subnet-29e63245
-    assign_public_ip: yes
+    vpc_subnet_id: subnet-0e1cd956
 
   tasks:
   - name: Launch EC2 instance
@@ -23,5 +22,5 @@
        count={{ count }}
        region={{ region }}
        vpc_subnet_id= {{ vpc_subnet_id}}
-       assign_public_ip= {{assign_public_ip}}
+       assign_public_ip: yes
     register: ec2
