@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  gather_facts: true
+  
+  vars:
+    instance_type: t2.micro
+    group_id: sg-a1f391c6
+    image: ami-b0ac25c3
+    count: 1
+    keypair: kaushik-dev-2016
+    region: eu-west-1
+    vpc_subnet_id: subnet-29e63245
+    assign_public_ip: yes
+
+  tasks:
+  - name: Launch EC2 instance
+    ec2:
+       group_id={{ group_id }}
+       instance_type={{ instance_type }} 
+       image={{ image }}
+       wait=true
+       keypair={{ keypair }}
+       count={{ count }}
+       region={{ region }}
+       vpc_subnet_id= {{ vpc_subnet_id}}
+       assign_public_ip= {{assign_public_ip}}
+    register: ec2
