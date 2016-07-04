@@ -22,5 +22,5 @@
        count={{ count }}
        region={{ region }}
        vpc_subnet_id= {{ vpc_subnet_id }}
-       assign_public_ip=yes
+       assign_public_ip= 0
     register: ec2
