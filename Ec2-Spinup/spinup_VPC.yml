@@ -27,8 +27,11 @@
     register: ec2
     
   - name: Add all instance public IPs to host group
-    add_host: hostname={{ item.public_ip }} groups=ec2hosts
+    add_host: hostname={{ item.private_ip }} groups=ec2hosts
     with_items: ec2.instances
+    
+  - name: Wait for 1 minute
+    pause: minutes=1
   
 - name: Working with new set of hosts
   hosts: ec2hosts
