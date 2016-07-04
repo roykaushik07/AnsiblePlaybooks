@@ -5,7 +5,7 @@
   vars:
     instance_type: t2.micro
     group_id: sg-a1f391c6
-    image: ami-b0ac25c3
+    image: ami-8b8c57f8
     count: 1
     keypair: kaushik-dev-2016
     region: eu-west-1
@@ -15,12 +15,12 @@
   - name: Launch EC2 instance
     ec2:
        group_id={{ group_id }}
-       instance_type={{ instance_type }} 
+       instance_type={{ instance_type }}
        image={{ image }}
        wait=true
        keypair={{ keypair }}
        count={{ count }}
        region={{ region }}
-       vpc_subnet_id= {{ vpc_subnet_id }}
-       assign_public_ip= 0
+       vpc_subnet_id={{ vpc_subnet_id }}
+       assign_public_ip=true
     register: ec2
