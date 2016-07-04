@@ -6,7 +6,7 @@
     instance_type: t2.micro
     group_id: [sg-a1f391c6,sg-d8721fbf]
     image: ami-8b8c57f8
-    count: 1
+    count: 2
     keypair: kaushik-dev-2016
     region: eu-west-1
     vpc_subnet_id: subnet-0e1cd956
@@ -23,5 +23,18 @@
        region={{ region }}
        vpc_subnet_id={{ vpc_subnet_id }}
        assign_public_ip=true
-       instance_tags='{"Name":"stuff"}'
+       instance_tags='{"Name":"COD_SUBNET1"}'
     register: ec2
+    
+  - name: Add all instance public IPs to host group
+    add_host: hostname={{ item.public_ip }} groups=ec2hosts
+    with_items: ec2.instances
+  
+- name: Working with new set of hosts
+  hosts: ec2hosts
+  gather_facts: true
+  
+  tasks:
+  - name: Ping the servers
+    action: ping
+    register: ec2_ping
