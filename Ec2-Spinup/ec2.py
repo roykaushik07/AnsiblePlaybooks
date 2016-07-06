@@ -15,7 +15,7 @@ variables needed for Boto have already been set:
 This script also assumes there is an ec2.ini file alongside it.  To specify a
 different path to ec2.ini, define the EC2_INI_PATH environment variable:
 
-    export EC2_INI_PATH=/path/to/my_ec2.ini
+    export EC2_INI_PATH=/etc/ansible/ec2.ini
 
 If you're using eucalyptus you need to set the above variables and
 you need to define:
@@ -30,7 +30,7 @@ the AWS_PROFILE variable:
 
 For more details, see: http://docs.pythonboto.org/en/latest/boto_config_tut.html
 
-When run against a specific host,  
+When run against a specific host, this script returns the following variables:
  - ec2_ami_launch_index
  - ec2_architecture
  - ec2_association
