@@ -35,7 +35,7 @@
     with_items: ec2.instances
 
 - name: Working with new set of hosts
-  hosts: tag_Name_COD_SUBNET1
+  hosts: ec2hosts
   gather_facts: true
   
   tasks:
