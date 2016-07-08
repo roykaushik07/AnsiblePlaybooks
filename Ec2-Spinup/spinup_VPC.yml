@@ -6,7 +6,7 @@
     instance_type: t2.micro
     group_id: [sg-a1f391c6,sg-d8721fbf]
     image: ami-8b8c57f8
-    count: 2
+    count: 1
     keypair: kaushik-dev-2016
     region: eu-west-1
     vpc_subnet_id: subnet-0e1cd956
@@ -22,7 +22,7 @@
        count={{ count }}
        region={{ region }}
        vpc_subnet_id={{ vpc_subnet_id }}
-       assign_public_ip=true
+       assign_public_ip=false
        instance_tags='{"Name":"COD_SUBNET1"}'
     register: ec2
     
